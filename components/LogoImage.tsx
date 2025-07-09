@@ -13,11 +13,11 @@ export default function LogoImage() {
 
   return (
     <Image
-      src="/logo.jpeg"
+      src="/logo.png"
       alt="Marmodity Ventures Logo"
-      width={64}
-      height={64}
-      className="rounded-lg"
+      width={90}
+      height={90}
+      className=" rounded-lg"
       priority
     />
   );

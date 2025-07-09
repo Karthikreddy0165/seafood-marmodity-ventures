@@ -1068,13 +1068,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <motion.span 
-                  className="text-3xl md:text-4xl"
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                >
-                  🐟
-                </motion.span>
+                <div className='rounded-full bg-white'><LogoImage/></div>
+                
                 <div>
                   <span className="text-xl md:text-2xl font-bold">Marmodity Ventures LLP</span>
                   <p className="text-blue-300 text-sm md:text-base">Premium Seafood Exports</p>
