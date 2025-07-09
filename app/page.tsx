@@ -2,13 +2,30 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence,Variants } from 'framer-motion';
 import LogoImage from '../components/LogoImage'
 
 export default function Home() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+
+    type Product = {
+    id: number;
+    name: string;
+    description: string;
+    adultSize: string;
+    image: string;
+    category: string;
+  };
+  type GalleryItem = {
+      id: number,
+      type: string,
+      src: string,
+      title: string,
+      description: string
+    }
+
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedGalleryItem, setSelectedGalleryItem] = useState(null);
+  const [selectedGalleryItem, setSelectedGalleryItem] = useState<GalleryItem | null>(null);
 
     const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -339,7 +356,7 @@ export default function Home() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants : Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -916,7 +933,7 @@ export default function Home() {
               
               {[
                 { icon: '📧', label: 'Email', value: 'exports@marmodityventures.com', link: 'mailto:exports@marmodityventures.com' },
-                { icon: '📱', label: 'WhatsApp', value: '+91 98765 43210', link: 'https://wa.me/919876543210' },
+                { icon: '📱', label: 'WhatsApp', value: '+91 97433 36489', link: 'https://wa.me/919743336489' },
                 { icon: '📞', label: 'Phone', value: '+91 11 4567 8900', link: 'tel:+911145678900' },
                 { icon: '📍', label: 'Address', value: 'New Delhi, India', link: '#' }
               ].map((contact, index) => (
