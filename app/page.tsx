@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence,Variants } from 'framer-motion';
 import LogoImage from '../components/LogoImage'
+import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
 
@@ -42,7 +43,7 @@ export default function Home() {
       ? `Hi! I'm interested in ${productName}. Could you please provide more details about pricing, availability, and shipping options?`
       : "Hi! I'm interested in your seafood products. Could you please provide more information about your offerings?";
     
-    const whatsappUrl = `https://wa.me/919743336489?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917829574401?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -238,42 +239,42 @@ export default function Home() {
     {
       id: 1,
       type: 'image',
-      src: 'https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: '/FreshFishProccessing.jpeg',
       title: 'Fresh Fish Processing',
       description: 'State-of-the-art processing facility'
     },
     {
       id: 2,
       type: 'image',
-      src: 'https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: '/QualityControl.jpeg',
       title: 'Quality Control',
       description: 'Rigorous quality testing procedures'
     },
     {
       id: 3,
       type: 'image',
-      src: 'https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: '/ColdStorage.jpeg',
       title: 'Cold Storage',
       description: 'Temperature-controlled storage facilities'
     },
     {
       id: 4,
       type: 'image',
-      src: 'https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: '/ExportPackaging.jpeg',
       title: 'Export Packaging',
       description: 'Professional packaging for international shipping'
     },
     {
       id: 5,
       type: 'image',
-      src: 'https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: '/FishFarm.jpeg',
       title: 'Fish Farm',
       description: 'Sustainable aquaculture practices'
     },
     {
       id: 6,
       type: 'image',
-      src: 'https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: '/Logistics.jpeg',
       title: 'Logistics',
       description: 'Global shipping and distribution network'
     }
@@ -281,12 +282,12 @@ export default function Home() {
 
   const certifications = [
     {
-      name: 'HACCP Certified',
-      description: 'Hazard Analysis Critical Control Points',
+      name: 'RCMC(MPEDA)',
+      description: 'Registration-Cum-Membership Certificate',
       icon: '🏆'
     },
     {
-      name: 'ISO 22000:2018',
+      name: 'Health Certified',
       description: 'Food Safety Management System',
       icon: '📋'
     },
@@ -921,139 +922,105 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6 md:space-y-8"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Contact Information</h3>
-              
-              {[
-                { icon: '📧', label: 'Email', value: 'exports@marmodityventures.com', link: 'mailto:exports@marmodityventures.com' },
-                { icon: '📱', label: 'WhatsApp', value: '+91 97433 36489', link: 'https://wa.me/919743336489' },
-                { icon: '📞', label: 'Phone', value: '+91 11 4567 8900', link: 'tel:+911145678900' },
-                { icon: '📍', label: 'Address', value: 'New Delhi, India', link: '#' }
-              ].map((contact, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, x: 10 }}
-                  className="flex items-center space-x-4 group cursor-pointer"
-                >
-                  <motion.div 
-                    className="text-2xl md:text-3xl"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {contact.icon}
-                  </motion.div>
-                  <div>
-                    <p className="font-semibold text-blue-200 text-sm md:text-base">{contact.label}</p>
-                    <a href={contact.link} className="text-white text-base md:text-lg hover:text-blue-300 transition-colors">
-                      {contact.value}
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="space-y-6 md:space-y-8"
+  >
+    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Contact Information</h3>
 
-              <div className="space-y-4 pt-8">
-                <motion.a 
-                  href="https://wa.me/919876543210" 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 shadow-lg"
-                >
-                  <span className="mr-3 text-lg md:text-xl">💬</span>
-                  Chat on WhatsApp
-                </motion.a>
-                <motion.a 
-                  href="mailto:exports@marmodityventures.com" 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-blue-800 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300"
-                >
-                  <span className="mr-3 text-lg md:text-xl">✉️</span>
-                  Send Email
-                </motion.a>
-              </div>
-            </motion.div>
+  {[
+    {
+      icon: '📧',
+      label: 'Email',
+      value: 'seafood@marmodityventures.com',
+      link: 'mailto:seafood@marmodityventures.com',
+    },
+    {
+      icon: '📱',
+      label: 'WhatsApp',
+      value: '+91 78295 74401',
+      link: 'https://wa.me/917829574401',
+    },
+    {
+      icon: '📞',
+      label: 'Phone',
+      value: '+91 78295 74401',
+      link: 'tel:+917829574401',
+    },
+    {
+      icon: '📍',
+      label: 'Address',
+      value: 'Bengaluru, India',
+      link: '#',
+    },
+  ].map((contact, index) => (
+    <motion.a
+      key={index}
+      href={contact.link}
+      target={contact.link.startsWith('http') ? '_blank' : undefined} // ✅ Only HTTP links in new tab
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ scale: 1.05, x: 10 }}
+      className="flex items-center space-x-4 group text-white hover:text-blue-300 transition-colors"
+    >
+      <motion.div
+        className="text-2xl md:text-3xl"
+        whileHover={{ scale: 1.2, rotate: 10 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+      >
+        {contact.icon}
+      </motion.div>
+      <div>
+        <p className="font-semibold text-blue-200 text-sm md:text-base">{contact.label}</p>
+        <p className="text-base md:text-lg">{contact.value}</p>
+      </div>
+    </motion.a>
+  ))}
 
-            <motion.form
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-6 md:p-8 border border-white/20"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Send us a Message</h3>
-              <div className="space-y-6">
-                {[
-                  { label: 'Full Name', type: 'text', placeholder: 'Your full name' },
-                  { label: 'Email Address', type: 'email', placeholder: 'your@email.com' },
-                  { label: 'Company Name', type: 'text', placeholder: 'Your company name' },
-                  { label: 'Phone Number', type: 'tel', placeholder: '+1 234 567 8900' }
-                ].map((field, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    <label className="block text-white font-semibold mb-2 text-sm md:text-base">{field.label}</label>
-                    <motion.input 
-                      type={field.type}
-                      whileFocus={{ scale: 1.02 }}
-                      className="w-full px-4 py-3 md:py-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
-                      placeholder={field.placeholder}
-                    />
-                  </motion.div>
-                ))}
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <label className="block text-white font-semibold mb-2 text-sm md:text-base">Message</label>
-                  <motion.textarea 
-                    rows={4}
-                    whileFocus={{ scale: 1.02 }}
-                    className="w-full px-4 py-3 md:py-4 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Tell us about your seafood requirements, quantities, and delivery preferences..."
-                  ></motion.textarea>
-                </motion.div>
-                
-                <motion.button 
-                  type="submit"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg"
-                >
-                  Send Message
-                </motion.button>
-              </div>
-            </motion.form>
-          </div>
+
+    <div className="space-y-4 pt-8">
+      <motion.a
+        href="https://wa.me/917829574401"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 shadow-lg"
+      >
+        <span className="mr-3 text-lg md:text-xl">💬</span>
+        Chat on WhatsApp
+      </motion.a>
+
+      <motion.a
+        href="mailto:seafood@marmodityventures.com"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-blue-800 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300"
+      >
+        <span className="mr-3 text-lg md:text-xl">✉️</span>
+        Send Email
+      </motion.a>
+    </div>
+  </motion.div>
+
+  <ContactForm />
+</div>
+
         </div>
       </section>
 
@@ -1078,18 +1045,27 @@ export default function Home() {
               <p className="text-blue-200 leading-relaxed mb-6 max-w-md text-sm md:text-base">
                 Your trusted gateway to the world of Indian seafood exports. From pond to port - Quality assured, globally delivered.
               </p>
-              <div className="flex space-x-4">
-                {['📧', '📱', '🌐', '📍'].map((icon, index) => (
-                  <motion.div 
-                    key={index} 
-                    className="w-10 h-10 md:w-12 md:h-12 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <span className="text-lg md:text-xl">{icon}</span>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="flex space-x-4">
+              {[
+                { icon: '📧', label: 'Email', href: 'mailto:seafood@marmodityventures.com', external: true },
+                { icon: '📱', label: 'Phone', href: 'tel:+917829574401' },
+                { icon: '🌐', label: 'Website', href: 'https://seafood.marmodityventures.com', external: true },
+                { icon: '📍', label: 'Location', href: 'https://maps.google.com/?q=Marmodity+Ventures', external: true }
+              ].map(({ icon, href, label, external }, index) => (
+                <motion.a
+                  key={index}
+                  href={href}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
+                  aria-label={label}
+                  className="w-10 h-10 md:w-12 md:h-12 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <span className="text-lg md:text-xl">{icon}</span>
+                </motion.a>
+              ))}
+            </div>
             </div>
             
             <div>
